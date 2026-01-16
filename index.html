@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NESTORA – Find Home. Before You Land.</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- External Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="h-full overflow-x-hidden">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass-dark">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#6FFFE9] to-[#5BC0BE] flex items-center justify-center text-[#0B132B] font-bold">
+        N
+      </div>
+      <span id="nav-brand" class="font-poppins font-bold text-lg">NESTORA</span>
+    </div>
+
+    <div class="hidden md:flex gap-8 text-sm">
+      <button onclick="showSection('home')" class="hover:text-[#6FFFE9]">Home</button>
+      <button onclick="showSection('search')" class="hover:text-[#6FFFE9]">Properties</button>
+      <button onclick="showSection('about')" class="hover:text-[#6FFFE9]">About</button>
+    </div>
+
+    <button class="btn-primary px-5 py-2 rounded-xl text-[#0B132B] font-semibold">
+      Get Started
+    </button>
+  </div>
+</nav>
+
+<!-- ================= MAIN ================= -->
+<main class="pt-16">
+
+<!-- HERO -->
+<section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-center px-6">
+  <div class="max-w-4xl">
+    <h1 id="hero-title" class="font-poppins text-4xl md:text-6xl font-bold mb-6">
+      Find Your Perfect <span class="text-gradient block">Student Home</span>
+    </h1>
+    <p id="hero-subtitle" class="text-gray-300 text-lg mb-8">
+      AI-powered housing for students. Trusted, verified & transparent.
+    </p>
+    <button
+      id="hero-cta"
+      class="btn-primary px-8 py-4 rounded-xl text-[#0B132B] font-semibold">
+      Start Your Search
+    </button>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<section id="search" class="hidden py-16 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-poppins text-3xl font-bold mb-6">
+      Available <span class="text-gradient">Properties</span>
+    </h2>
+
+    <!-- RESULTS -->
+    <div
+      id="search-results"
+      class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    </div>
+
+    <!-- NO RESULTS -->
+    <div
+      id="no-results"
+      class="hidden text-center text-gray-400 mt-10">
+      No properties found.
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="hidden py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-poppins text-3xl font-bold mb-4">
+      About <span class="text-gradient">NESTORA</span>
+    </h2>
+    <p class="text-gray-300">
+      NESTORA helps students find verified housing before landing in a new country.
+      Built with transparency, trust, and AI assistance.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= CHAT FAB ================= -->
+<button
+  id="chat-fab"
+  onclick="toggleChat()"
+  class="chat-fab glass-dark w-16 h-16 rounded-full flex items-center justify-center">
+  💬
+</button>
+
+<!-- ================= CHAT WINDOW ================= -->
+<div
+  id="chat-window"
+  class="chat-window glass-dark rounded-2xl hidden flex flex-col">
+
+  <div class="p-4 border-b border-gray-700 flex justify-between">
+    <span class="font-semibold">RITIK AI</span>
+    <button onclick="toggleChat()">✕</button>
+  </div>
+
+  <div
+    id="chat-messages"
+    class="flex-1 p-4 text-sm space-y-3 overflow-y-auto">
+  </div>
+
+  <form
+    onsubmit="sendMessage(event)"
+    class="p-4 flex gap-2">
+
+    <input
+      id="chat-input"
+      class="input-glass flex-1 rounded-xl px-4 py-2"
+      placeholder="Ask me anything..." />
+
+    <button
+      class="btn-primary px-4 rounded-xl text-[#0B132B]">
+      Send
+    </button>
+  </form>
+</div>
+
+<!-- ================= MAIN SCRIPT ================= -->
+<script type="module" src="assets/js/main.js"></script>
+
+</body>
+</html>
